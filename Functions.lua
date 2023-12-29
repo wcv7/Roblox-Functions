@@ -3,7 +3,7 @@ print("Before")
 
 --task.wait(.5)
 
---task 3
+--task 2
 --local DelayTask = task.delay(5, function()
 --	print("After X2")
 --end)
@@ -15,21 +15,32 @@ print("Before")
 --	task.cancel(DelayTask)
 --end
 
-local IsLooping = true
-task.spawn(function()
-	while IsLooping do
-		print("While Looping")
-		task.wait()
+--local IsLooping = true
+--task.spawn(function()
+--	while IsLooping do
+--		print("While Looping")
+--		task.wait()
 
-	end
+--	end
+--end)
+
+--for i = 1, 10 do
+--	print("For Loop 2")
+--	task.wait()
+--end
+
+--IsLooping = false
+
+
+--task 4
+
+task.defer(function()
+	print("Defer")
 end)
 
-for i = 1, 10 do
-	print("For Loop 2")
-	task.wait()
+for i = 1, 10000 do
+	print("For Loop 1")
 end
 
-IsLooping = false
-
---task 2
+--task 3
 print("After")
